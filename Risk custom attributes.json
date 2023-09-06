@@ -1,0 +1,645 @@
+{
+  "type": "alyne|FOITApplication",
+  "version": "2.0",
+  "title": {
+    "en_US": "",
+    "en_GB": "",
+    "de_DE": ""
+  },
+  "createdAt": {
+    "$date": "2023-02-22T08:36:43.377Z"
+  },
+  "updatedAt": {
+    "$date": "2023-02-22T09:04:58.518Z"
+  },
+  "owner": {
+    "$oid": "owner-id"
+  },
+  "libId": "lib-id",
+  "itemId": 12,
+  "lifecycleStatus": "published",
+  "ls": {
+    "fromLibId": null,
+    "fromVersion": null,
+    "version": null,
+    "versionCreated": false,
+    "versionPublished": false
+  },
+  "schema": {
+    "groups": {
+      "general information": {
+        "title": {
+          "en_US": "General Information",
+          "en_GB": "General Information",
+          "de_DE": "General Information"
+        }
+      }
+    },
+    "required": [
+      "cycle type",
+      "review cycle period (weeks)",
+      "last review date",
+      "next review date",
+      "lifecycle phase",
+      "source",
+      "velocity",
+      "tolerance level"
+    ],
+    "type": "object",
+    "properties": {
+      "risk event cause": {
+        "type": "string",
+        "meta": {
+          "title": {
+            "en_US": "Risk Event Cause",
+            "en_GB": "Risk Event Cause",
+            "de_DE": "Risk Event Cause"
+          },
+          "information": {
+            "en_US": "This is a description of the cause(s) of the risk event.",
+            "en_GB": "This is a description of the cause(s) of the risk event.",
+            "de_DE": "This is a description of the cause(s) of the risk event."
+          }
+          
+        },
+        "group": "general information"
+      },
+      "risk event outcome": {
+        "type": "string",
+        "meta": {
+          "title": {
+            "en_US": "Risk Event Outcome",
+            "en_GB": "Risk Event Outcome",
+            "de_DE": "Risk Event Outcome"
+          },
+          "information": {
+            "en_US": "This is a description of the outcomes(s) of the risk event.",
+            "en_GB": "This is a description of the outcomes(s) of the risk event.",
+            "de_DE": "This is a description of the outcomes(s) of the risk event."
+          }
+        },
+        "group": "general information"
+      },
+      "cycle type": {
+        "type": "string",
+        "enum": [
+          "No cycle",
+          "Daily cycle",
+          "Winter cycle",
+          "Summer cycle",
+          "Annual cycle",
+          "100+ year cycle",
+          "1000+ year cycle"
+        ],
+        "meta": {
+          "title": {
+            "en_US": "Cycle Type",
+            "en_GB": "Cycle Type",
+            "de_DE": "Cycle Type"
+          },
+          "information": {
+            "en_US": "This is the type of the risk event's cycle.",
+            "en_GB": "This is the type of the risk event's cycle.",
+            "de_DE": "This is the type of the risk event's cycle."
+          },
+          "values": {
+            "No cycle": {
+              "title": {
+                "value": {
+                  "en_US": "No cycle",
+                  "en_GB": "No cycle",
+                  "de_DE": "No cycle"
+                }
+              }
+            },
+            "Daily cycle": {
+              "title": {
+                "value": {
+                  "en_US": "Daily cycle",
+                  "en_GB": "Daily cycle",
+                  "de_DE": "Daily cycle"
+                }
+              }
+            },
+            "Winter cycle": {
+              "title": {
+                "value": {
+                  "en_US": "Winter cycle",
+                  "en_GB": "Winter cycle",
+                  "de_DE": "Winter cycle"
+                }
+              }
+            },
+            "Summer cycle": {
+              "title": {
+                "value": {
+                  "en_US": "Summer cycle",
+                  "en_GB": "Summer cycle",
+                  "de_DE": "Summer cycle"
+                }
+              }
+            },
+            "Annual cycle": {
+              "title": {
+                "value": {
+                  "en_US": "Annual cycle",
+                  "en_GB": "Annual cycle",
+                  "de_DE": "Annual cycle"
+                }
+              }
+            },
+            "100+ year cycle": {
+              "title": {
+                "value": {
+                  "en_US": "100+ year cycle",
+                  "en_GB": "100+ year cycle",
+                  "de_DE": "100+ year cycle"
+                }
+              }
+            },
+            "1000+ year cycle": {
+              "title": {
+                "value": {
+                  "en_US": "1000+ year cycle",
+                  "en_GB": "1000+ year cycle",
+                  "de_DE": "1000+ year cycle"
+                }
+              }
+            }
+          }
+        },
+        "group": "general information"
+      },
+      "cdr risk id": {
+        "type": "string",
+        "meta": {
+          "title": {
+            "en_US": "CDR Risk ID",
+            "en_GB": "CDR Risk ID",
+            "de_DE": "CDR Risk ID"
+          },
+          "information": {
+            "en_US": "This is an optional number that may link this risk to another CDR resource.",
+            "en_GB": "This is an optional number that may link this risk to another CDR resource.",
+            "de_DE": "This is an optional number that may link this risk to another CDR resource."
+          }
+        },
+        "group": "general information"
+      },
+      "mitre attack id": {
+        "type": "string",
+        "meta": {
+          "title": {
+            "en_US": "Mitre Attack ID",
+            "en_GB": "Mitre Attack ID",
+            "de_DE": "Mitre Attack ID"
+          },
+          "information": {
+            "en_US": "The risk's corresponding Mitre Attack Technique ID.",
+            "en_GB": "The risk's corresponding Mitre Attack Technique ID.",
+            "de_DE": "The risk's corresponding Mitre Attack Technique ID."
+          }
+        },
+        "group": "general information"
+      },
+      "review cycle period (weeks)": {
+        "type": "integer",
+        "meta": {
+          "title": {
+            "en_US": "Review Cycle Period (Weeks)",
+            "en_GB": "Review Cycle Period (Weeks)",
+            "de_DE": "Review Cycle Period (Weeks)"
+          },
+          "information": {
+            "en_US": "This is the risk's review cycle period expressed in weeks.",
+            "en_GB": "This is the risk's review cycle period expressed in weeks.",
+            "de_DE": "This is the risk's review cycle period expressed in weeks."
+          }
+        },
+        "group": "general information"
+      },
+      "last review date": {
+        "type": "string",
+        "format": "date",
+        "meta": {
+          "title": {
+            "en_US": "Last Review Date",
+            "en_GB": "Last Review Date",
+            "de_DE": "Last Review Date"
+          },
+          "information": {
+            "en_US": "This is the date on which the risk was last reviewed.",
+            "en_GB": "This is the date on which the risk was last reviewed.",
+            "de_DE": "This is the date on which the risk was last reviewed."
+          }
+        },
+        "group": "general information"
+      },
+      "next review date": {
+        "type": "string",
+        "format": "date",
+        "meta": {
+          "title": {
+            "en_US": "Next Review Date",
+            "en_GB": "Next Review Date",
+            "de_DE": "Next Review Date"
+          },
+          "information": {
+            "en_US": "This the date of the risk's next scheduled review date.",
+            "en_GB": "This the date of the risk's next scheduled review date.",
+            "de_DE": "This the date of the risk's next scheduled review date."
+          }
+        },
+        "group": "general information"
+      },
+      "lifecycle phase": {
+        "type": "string",
+        "enum": [
+          "Unassessed",
+          "Identified",
+          "Assessed",
+          "Assigned",
+          "In-treatment",
+          "Treated",
+          "Reviewed"
+        ],
+        "meta": {
+          "title": {
+            "en_US": "Lifecycle Phase",
+            "en_GB": "Lifecycle Phase",
+            "de_DE": "Lifecycle Phase"
+          },
+          "information": {
+            "en_US": "This is the current phase of the risk's lifecycle.",
+            "en_GB": "This is the current phase of the risk's lifecycle.",
+            "de_DE": "This is the current phase of the risk's lifecycle."
+          },
+          "values": {
+            "Unassessed": {
+              "title": {
+                "value": {
+                  "en_US": "Unassessed",
+                  "en_GB": "Unassessed",
+                  "de_DE": "Unassessed"
+                }
+              }
+            },
+            "Identified": {
+              "title": {
+                "value": {
+                  "en_US": "Identified",
+                  "en_GB": "Identified",
+                  "de_DE": "Identified"
+                }
+              }
+            },
+            "Assessed": {
+              "title": {
+                "value": {
+                  "en_US": "Assessed",
+                  "en_GB": "Assessed",
+                  "de_DE": "Assessed"
+                }
+              }
+            },
+            "Assigned": {
+              "title": {
+                "value": {
+                  "en_US": "Assigned",
+                  "en_GB": "Assigned",
+                  "de_DE": "Assigned"
+                }
+              }
+            },
+            "In-treatment": {
+              "title": {
+                "value": {
+                  "en_US": "In-treatment",
+                  "en_GB": "In-treatment",
+                  "de_DE": "In-treatment"
+                }
+              }
+            },
+            "Treated": {
+              "title": {
+                "value": {
+                  "en_US": "Treated",
+                  "en_GB": "Treated",
+                  "de_DE": "Treated"
+                }
+              }
+            },
+            "Reviewed": {
+              "title": {
+                "value": {
+                  "en_US": "Reviewed",
+                  "en_GB": "Reviewed",
+                  "de_DE": "Reviewed"
+                }
+              }
+            }
+          }
+        },
+        "group": "general information"
+      },
+      "source": {
+        "type": "string",
+        "enum": [
+          "Unknown",
+          "Force of nature",
+          "Deliberate act",
+          "Human error",
+          "Inadequate process",
+          "Inadequate technology",
+          "Technology failure"
+        ],
+        "meta": {
+          "title": {
+            "en_US": "Source",
+            "en_GB": "Source",
+            "de_DE": "Source"
+          },
+          "information": {
+            "en_US": "This is the the source of the risk event.",
+            "en_GB": "This is the the source of the risk event.",
+            "de_DE": "This is the the source of the risk event."
+          },
+          "values": {
+            "Unknown": {
+              "title": {
+                "value": {
+                  "en_US": "Unknown",
+                  "en_GB": "Unknown",
+                  "de_DE": "Unknown"
+                }
+              }
+            },
+            "Force of nature": {
+              "title": {
+                "value": {
+                  "en_US": "Force of nature",
+                  "en_GB": "Force of nature",
+                  "de_DE": "Force of nature"
+                }
+              }
+            },
+            "Deliberate act": {
+              "title": {
+                "value": {
+                  "en_US": "Deliberate act",
+                  "en_GB": "Deliberate act",
+                  "de_DE": "Deliberate act"
+                }
+              }
+            },
+            "Human error": {
+              "title": {
+                "value": {
+                  "en_US": "Human error",
+                  "en_GB": "Human error",
+                  "de_DE": "Human error"
+                }
+              }
+            },
+            "Inadequate process": {
+              "title": {
+                "value": {
+                  "en_US": "Inadequate process",
+                  "en_GB": "Inadequate process",
+                  "de_DE": "Inadequate process"
+                }
+              }
+            },
+            "Inadequate technology": {
+              "title": {
+                "value": {
+                  "en_US": "Inadequate technology",
+                  "en_GB": "Inadequate technology",
+                  "de_DE": "Inadequate technology"
+                }
+              }
+            },
+            "Technology failure": {
+              "title": {
+                "value": {
+                  "en_US": "Technology failure",
+                  "en_GB": "Technology failure",
+                  "de_DE": "Technology failure"
+                }
+              }
+            }
+          }
+        },
+        "group": "general information"
+      },
+      "velocity": {
+        "type": "string",
+        "enum": [
+          "Unassessed",
+          "Hours",
+          "Days",
+          "Weeks",
+          "Months",
+          "Years",
+          "Decades"
+        ],
+        "meta": {
+          "title": {
+            "en_US": "Velocity",
+            "en_GB": "Velocity",
+            "de_DE": "Velocity"
+          },
+          "information": {
+            "en_US": "This is the velocity of the risk impact's effect.",
+            "en_GB": "This is the velocity of the risk impact's effect.",
+            "de_DE": "This is the velocity of the risk impact's effect."
+          },
+          "values": {
+            "Unassessed": {
+              "title": {
+                "value": {
+                  "en_US": "Unassessed",
+                  "en_GB": "Unassessed",
+                  "de_DE": "Unassessed"
+                }
+              }
+            },
+            "Hours": {
+              "title": {
+                "value": {
+                  "en_US": "Hours",
+                  "en_GB": "Hours",
+                  "de_DE": "Hours"
+                }
+              }
+            },
+            "Days": {
+              "title": {
+                "value": {
+                  "en_US": "Days",
+                  "en_GB": "Days",
+                  "de_DE": "Days"
+                }
+              }
+            },
+            "Weeks": {
+              "title": {
+                "value": {
+                  "en_US": "Weeks",
+                  "en_GB": "Weeks",
+                  "de_DE": "Weeks"
+                }
+              }
+            },
+            "Months": {
+              "title": {
+                "value": {
+                  "en_US": "Months",
+                  "en_GB": "Months",
+                  "de_DE": "Months"
+                }
+              }
+            },
+            "Years": {
+              "title": {
+                "value": {
+                  "en_US": "Years",
+                  "en_GB": "Years",
+                  "de_DE": "Years"
+                }
+              }
+            },
+            "Decades": {
+              "title": {
+                "value": {
+                  "en_US": "Decades",
+                  "en_GB": "Decades",
+                  "de_DE": "Decades"
+                }
+              }
+            }
+          }
+        },
+        "group": "general information"
+      },
+      "Type": {
+        "type": "string",
+        "meta": {
+          "title": {
+            "en_US": "Type",
+            "en_GB": "Type",
+            "de_DE": "Type"
+          },
+          "information": {
+            "en_US": "This identifies the risk's type.",
+            "en_GB": "This identifies the risk's type.",
+            "de_DE": "This identifies the risk's type."
+          }
+        },
+        "group": "general information"
+      },
+      "category": {
+        "type": "string",
+        "meta": {
+          "title": {
+            "en_US": "Category",
+            "en_GB": "Category",
+            "de_DE": "Category"
+          },
+          "information": {
+            "en_US": "This identifies the risk's category.",
+            "en_GB": "This identifies the risk's category.",
+            "de_DE": "This identifies the risk's category."
+          }
+        },
+        "group": "general information"
+      },
+      "class": {
+        "type": "string",
+        "meta": {
+          "title": {
+            "en_US": "Class",
+            "en_GB": "Class",
+            "de_DE": "Class"
+          },
+          "information": {
+            "en_US": "This identifies the risk's class.",
+            "en_GB": "This identifies the risk's class.",
+            "de_DE": "This identifies the risk's class."
+          }
+        },
+        "group": "general information"
+      },
+      "tolerance level": {
+        "type": "string",
+        "enum": [
+          "Unassessed",
+          "Low",
+          "Medium",
+          "High",
+          "Extreme"
+        ],
+        "meta": {
+          "title": {
+            "en_US": "Tolerance Level",
+            "en_GB": "Tolerance Level",
+            "de_DE": "Tolerance Level"
+          },
+          "information": {
+            "en_US": "This is the highest risk level that can be tolerated for this risk.",
+            "en_GB": "This is the highest risk level that can be tolerated for this risk.",
+            "de_DE": "This is the highest risk level that can be tolerated for this risk."
+          },
+          "values": {
+            "Unassessed": {
+              "title": {
+                "value": {
+                  "en_US": "Unassessed",
+                  "en_GB": "Unassessed",
+                  "de_DE": "Unassessed"
+                }
+              }
+            },
+            "Low": {
+              "title": {
+                "value": {
+                  "en_US": "Low",
+                  "en_GB": "Low",
+                  "de_DE": "Low"
+                }
+              }
+            },
+            "Medium": {
+              "title": {
+                "value": {
+                  "en_US": "Medium",
+                  "en_GB": "Medium",
+                  "de_DE": "Medium"
+                }
+              }
+            },
+            "High": {
+              "title": {
+                "value": {
+                  "en_US": "High",
+                  "en_GB": "High",
+                  "de_DE": "High"
+                }
+              }
+            },
+            "Extreme": {
+              "title": {
+                "value": {
+                  "en_US": "Extreme",
+                  "en_GB": "Extreme",
+                  "de_DE": "Extreme"
+                }
+              }
+            }
+          }
+        },
+        "group": "general information"
+      }
+    }
+  }
+}
