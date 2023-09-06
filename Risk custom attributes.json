@@ -7,10 +7,10 @@
     "de_DE": ""
   },
   "createdAt": {
-    "$date": "2023-08-31T12:44:37.408Z"
+    "$date": "2023-02-22T08:36:43.377Z"
   },
   "updatedAt": {
-    "$date": "2023-08-31T14:10:35.781Z"
+    "$date": "2023-02-22T09:04:58.518Z"
   },
   "owner": {
     "$oid": "owner-id"
@@ -27,251 +27,26 @@
   },
   "schema": {
     "groups": {
-      "risk management": {
-        "title": {
-          "en_US": "Risk Management",
-          "en_GB": "Risk Management",
-          "de_DE": "Risk Management"
-        }
-      },
       "general information": {
         "title": {
           "en_US": "General Information",
           "en_GB": "General Information",
           "de_DE": "General Information"
         }
-      },
-      "meta data": {
-        "title": {
-          "en_US": "Meta Data",
-          "en_GB": "Meta Data",
-          "de_DE": "Meta Data"
-        }
       }
     },
     "required": [
-      "risk manager",
+      "cycle type",
+      "review cycle period (weeks)",
       "last review date",
       "next review date",
       "lifecycle phase",
-      "cycle type",
       "source",
       "velocity",
-      "date identified",
-      "date recorded"
+      "tolerance level"
     ],
     "type": "object",
     "properties": {
-      "risk manager": {
-        "$ref": "#/definitions/base/properties/_user",
-        "meta": {
-          "title": {
-            "en_US": "Risk Manager",
-            "en_GB": "Risk Manager",
-            "de_DE": "Risk Manager"
-          },
-          "information": {
-            "en_US": "The identity responsible for managing the risk's lifecycle.",
-            "en_GB": "The identity responsible for managing the risk's lifecycle.",
-            "de_DE": "The identity responsible for managing the risk's lifecycle."
-          }
-        },
-        "group": "risk management"
-      },
-      "last review date": {
-        "type": "string",
-        "format": "date",
-        "meta": {
-          "title": {
-            "en_US": "Last Review Date",
-            "en_GB": "Last Review Date",
-            "de_DE": "Last Review Date"
-          },
-          "information": {
-            "en_US": "The date on which the risk was last reviewed.",
-            "en_GB": "The date on which the risk was last reviewed.",
-            "de_DE": "The date on which the risk was last reviewed."
-          }
-        },
-        "group": "risk management"
-      },
-      "next review date": {
-        "type": "string",
-        "format": "date",
-        "meta": {
-          "title": {
-            "en_US": "Next Review Date",
-            "en_GB": "Next Review Date",
-            "de_DE": "Next Review Date"
-          },
-          "information": {
-            "en_US": "This the date of the risk's next scheduled review date.",
-            "en_GB": "This the date of the risk's next scheduled review date.",
-            "de_DE": "This the date of the risk's next scheduled review date."
-          }
-        },
-        "group": "risk management"
-      },
-      "lifecycle phase": {
-        "type": "string",
-        "enum": [
-          "Unassessed",
-          "Identified",
-          "Assessed",
-          "Assigned",
-          "In-treatment",
-          "Treated",
-          "Reviewed"
-        ],
-        "meta": {
-          "title": {
-            "en_US": "Lifecycle Phase",
-            "en_GB": "Lifecycle Phase",
-            "de_DE": "Lifecycle Phase"
-          },
-          "information": {
-            "en_US": "The current phase of the risk's lifecycle.",
-            "en_GB": "The current phase of the risk's lifecycle.",
-            "de_DE": "The current phase of the risk's lifecycle."
-          },
-          "values": {
-            "Unassessed": {
-              "title": {
-                "value": {
-                  "en_US": "Unassessed",
-                  "en_GB": "Unassessed",
-                  "de_DE": "Unassessed"
-                }
-              }
-            },
-            "Identified": {
-              "title": {
-                "value": {
-                  "en_US": "Identified",
-                  "en_GB": "Identified",
-                  "de_DE": "Identified"
-                }
-              }
-            },
-            "Assessed": {
-              "title": {
-                "value": {
-                  "en_US": "Assessed",
-                  "en_GB": "Assessed",
-                  "de_DE": "Assessed"
-                }
-              }
-            },
-            "Assigned": {
-              "title": {
-                "value": {
-                  "en_US": "Assigned",
-                  "en_GB": "Assigned",
-                  "de_DE": "Assigned"
-                }
-              }
-            },
-            "In-treatment": {
-              "title": {
-                "value": {
-                  "en_US": "In-treatment",
-                  "en_GB": "In-treatment",
-                  "de_DE": "In-treatment"
-                }
-              }
-            },
-            "Treated": {
-              "title": {
-                "value": {
-                  "en_US": "Treated",
-                  "en_GB": "Treated",
-                  "de_DE": "Treated"
-                }
-              }
-            },
-            "Reviewed": {
-              "title": {
-                "value": {
-                  "en_US": "Reviewed",
-                  "en_GB": "Reviewed",
-                  "de_DE": "Reviewed"
-                }
-              }
-            }
-          }
-        },
-        "group": "risk management"
-      },
-      "priority": {
-        "type": "string",
-        "enum": [
-          "Unassessed",
-          "Low",
-          "Medium",
-          "High",
-          "Urgent"
-        ],
-        "meta": {
-          "title": {
-            "en_US": "Priority",
-            "en_GB": "Priority",
-            "de_DE": "Priority"
-          },
-          "information": {
-            "en_US": "The risks's treatment priority.",
-            "en_GB": "The risks's treatment priority.",
-            "de_DE": "The risks's treatment priority."
-          },
-          "values": {
-            "Unassessed": {
-              "title": {
-                "value": {
-                  "en_US": "Unassessed",
-                  "en_GB": "Unassessed",
-                  "de_DE": "Unassessed"
-                }
-              }
-            },
-            "Low": {
-              "title": {
-                "value": {
-                  "en_US": "Low",
-                  "en_GB": "Low",
-                  "de_DE": "Low"
-                }
-              }
-            },
-            "Medium": {
-              "title": {
-                "value": {
-                  "en_US": "Medium",
-                  "en_GB": "Medium",
-                  "de_DE": "Medium"
-                }
-              }
-            },
-            "High": {
-              "title": {
-                "value": {
-                  "en_US": "High",
-                  "en_GB": "High",
-                  "de_DE": "High"
-                }
-              }
-            },
-            "Urgent": {
-              "title": {
-                "value": {
-                  "en_US": "Urgent",
-                  "en_GB": "Urgent",
-                  "de_DE": "Urgent"
-                }
-              }
-            }
-          }
-        },
-        "group": "risk management"
-      },
       "risk event cause": {
         "type": "string",
         "meta": {
@@ -281,10 +56,11 @@
             "de_DE": "Risk Event Cause"
           },
           "information": {
-            "en_US": "This is a description of the of the risk event's cause(s).",
-            "en_GB": "This is a description of the of the risk event's cause(s).",
-            "de_DE": "This is a description of the of the risk event's cause(s)."
+            "en_US": "This is a description of the cause(s) of the risk event.",
+            "en_GB": "This is a description of the cause(s) of the risk event.",
+            "de_DE": "This is a description of the cause(s) of the risk event."
           }
+          
         },
         "group": "general information"
       },
@@ -297,41 +73,9 @@
             "de_DE": "Risk Event Outcome"
           },
           "information": {
-            "en_US": "This is a description  of the risk event's outcomes(s).",
-            "en_GB": "This is a description  of the risk event's outcomes(s).",
-            "de_DE": "This is a description  of the risk event's outcomes(s)."
-          }
-        },
-        "group": "general information"
-      },
-      "cdr risk id": {
-        "type": "string",
-        "meta": {
-          "title": {
-            "en_US": "CDR Risk ID",
-            "en_GB": "CDR Risk ID",
-            "de_DE": "CDR Risk ID"
-          },
-          "information": {
-            "en_US": "This is an optional number that may link this risk to another CDR resource.",
-            "en_GB": "This is an optional number that may link this risk to another CDR resource.",
-            "de_DE": "This is an optional number that may link this risk to another CDR resource."
-          }
-        },
-        "group": "general information"
-      },
-      "mitre attack id": {
-        "type": "string",
-        "meta": {
-          "title": {
-            "en_US": "Mitre Attack ID",
-            "en_GB": "Mitre Attack ID",
-            "de_DE": "Mitre Attack ID"
-          },
-          "information": {
-            "en_US": "The risk's corresponding Mitre Attack Technique ID.",
-            "en_GB": "The risk's corresponding Mitre Attack Technique ID.",
-            "de_DE": "The risk's corresponding Mitre Attack Technique ID."
+            "en_US": "This is a description of the outcomes(s) of the risk event.",
+            "en_GB": "This is a description of the outcomes(s) of the risk event.",
+            "de_DE": "This is a description of the outcomes(s) of the risk event."
           }
         },
         "group": "general information"
@@ -354,9 +98,9 @@
             "de_DE": "Cycle Type"
           },
           "information": {
-            "en_US": "The type of the risk event's cycle.",
-            "en_GB": "The type of the risk event's cycle.",
-            "de_DE": "The type of the risk event's cycle."
+            "en_US": "This is the type of the risk event's cycle.",
+            "en_GB": "This is the type of the risk event's cycle.",
+            "de_DE": "This is the type of the risk event's cycle."
           },
           "values": {
             "No cycle": {
@@ -426,6 +170,178 @@
         },
         "group": "general information"
       },
+      "cdr risk id": {
+        "type": "string",
+        "meta": {
+          "title": {
+            "en_US": "CDR Risk ID",
+            "en_GB": "CDR Risk ID",
+            "de_DE": "CDR Risk ID"
+          },
+          "information": {
+            "en_US": "This is an optional number that may link this risk to another CDR resource.",
+            "en_GB": "This is an optional number that may link this risk to another CDR resource.",
+            "de_DE": "This is an optional number that may link this risk to another CDR resource."
+          }
+        },
+        "group": "general information"
+      },
+      "mitre attack id": {
+        "type": "string",
+        "meta": {
+          "title": {
+            "en_US": "Mitre Attack ID",
+            "en_GB": "Mitre Attack ID",
+            "de_DE": "Mitre Attack ID"
+          },
+          "information": {
+            "en_US": "The risk's corresponding Mitre Attack Technique ID.",
+            "en_GB": "The risk's corresponding Mitre Attack Technique ID.",
+            "de_DE": "The risk's corresponding Mitre Attack Technique ID."
+          }
+        },
+        "group": "general information"
+      },
+      "review cycle period (weeks)": {
+        "type": "integer",
+        "meta": {
+          "title": {
+            "en_US": "Review Cycle Period (Weeks)",
+            "en_GB": "Review Cycle Period (Weeks)",
+            "de_DE": "Review Cycle Period (Weeks)"
+          },
+          "information": {
+            "en_US": "This is the risk's review cycle period expressed in weeks.",
+            "en_GB": "This is the risk's review cycle period expressed in weeks.",
+            "de_DE": "This is the risk's review cycle period expressed in weeks."
+          }
+        },
+        "group": "general information"
+      },
+      "last review date": {
+        "type": "string",
+        "format": "date",
+        "meta": {
+          "title": {
+            "en_US": "Last Review Date",
+            "en_GB": "Last Review Date",
+            "de_DE": "Last Review Date"
+          },
+          "information": {
+            "en_US": "This is the date on which the risk was last reviewed.",
+            "en_GB": "This is the date on which the risk was last reviewed.",
+            "de_DE": "This is the date on which the risk was last reviewed."
+          }
+        },
+        "group": "general information"
+      },
+      "next review date": {
+        "type": "string",
+        "format": "date",
+        "meta": {
+          "title": {
+            "en_US": "Next Review Date",
+            "en_GB": "Next Review Date",
+            "de_DE": "Next Review Date"
+          },
+          "information": {
+            "en_US": "This the date of the risk's next scheduled review date.",
+            "en_GB": "This the date of the risk's next scheduled review date.",
+            "de_DE": "This the date of the risk's next scheduled review date."
+          }
+        },
+        "group": "general information"
+      },
+      "lifecycle phase": {
+        "type": "string",
+        "enum": [
+          "Unassessed",
+          "Identified",
+          "Assessed",
+          "Assigned",
+          "In-treatment",
+          "Treated",
+          "Reviewed"
+        ],
+        "meta": {
+          "title": {
+            "en_US": "Lifecycle Phase",
+            "en_GB": "Lifecycle Phase",
+            "de_DE": "Lifecycle Phase"
+          },
+          "information": {
+            "en_US": "This is the current phase of the risk's lifecycle.",
+            "en_GB": "This is the current phase of the risk's lifecycle.",
+            "de_DE": "This is the current phase of the risk's lifecycle."
+          },
+          "values": {
+            "Unassessed": {
+              "title": {
+                "value": {
+                  "en_US": "Unassessed",
+                  "en_GB": "Unassessed",
+                  "de_DE": "Unassessed"
+                }
+              }
+            },
+            "Identified": {
+              "title": {
+                "value": {
+                  "en_US": "Identified",
+                  "en_GB": "Identified",
+                  "de_DE": "Identified"
+                }
+              }
+            },
+            "Assessed": {
+              "title": {
+                "value": {
+                  "en_US": "Assessed",
+                  "en_GB": "Assessed",
+                  "de_DE": "Assessed"
+                }
+              }
+            },
+            "Assigned": {
+              "title": {
+                "value": {
+                  "en_US": "Assigned",
+                  "en_GB": "Assigned",
+                  "de_DE": "Assigned"
+                }
+              }
+            },
+            "In-treatment": {
+              "title": {
+                "value": {
+                  "en_US": "In-treatment",
+                  "en_GB": "In-treatment",
+                  "de_DE": "In-treatment"
+                }
+              }
+            },
+            "Treated": {
+              "title": {
+                "value": {
+                  "en_US": "Treated",
+                  "en_GB": "Treated",
+                  "de_DE": "Treated"
+                }
+              }
+            },
+            "Reviewed": {
+              "title": {
+                "value": {
+                  "en_US": "Reviewed",
+                  "en_GB": "Reviewed",
+                  "de_DE": "Reviewed"
+                }
+              }
+            }
+          }
+        },
+        "group": "general information"
+      },
       "source": {
         "type": "string",
         "enum": [
@@ -444,9 +360,9 @@
             "de_DE": "Source"
           },
           "information": {
-            "en_US": "The source of the risk event.",
-            "en_GB": "The source of the risk event.",
-            "de_DE": "The source of the risk event."
+            "en_US": "This is the the source of the risk event.",
+            "en_GB": "This is the the source of the risk event.",
+            "de_DE": "This is the the source of the risk event."
           },
           "values": {
             "Unknown": {
@@ -520,7 +436,6 @@
         "type": "string",
         "enum": [
           "Unassessed",
-          "Minutes",
           "Hours",
           "Days",
           "Weeks",
@@ -535,9 +450,9 @@
             "de_DE": "Velocity"
           },
           "information": {
-            "en_US": "The velocity of the inherent risk impact's effect.",
-            "en_GB": "The velocity of the inherent risk impact's effect.",
-            "de_DE": "The velocity of the inherent risk impact's effect."
+            "en_US": "This is the velocity of the risk impact's effect.",
+            "en_GB": "This is the velocity of the risk impact's effect.",
+            "de_DE": "This is the velocity of the risk impact's effect."
           },
           "values": {
             "Unassessed": {
@@ -546,15 +461,6 @@
                   "en_US": "Unassessed",
                   "en_GB": "Unassessed",
                   "de_DE": "Unassessed"
-                }
-              }
-            },
-            "Minutes": {
-              "title": {
-                "value": {
-                  "en_US": "Minutes",
-                  "en_GB": "Minutes",
-                  "de_DE": "Minutes"
                 }
               }
             },
@@ -616,14 +522,62 @@
         },
         "group": "general information"
       },
+      "Type": {
+        "type": "string",
+        "meta": {
+          "title": {
+            "en_US": "Type",
+            "en_GB": "Type",
+            "de_DE": "Type"
+          },
+          "information": {
+            "en_US": "This identifies the risk's type.",
+            "en_GB": "This identifies the risk's type.",
+            "de_DE": "This identifies the risk's type."
+          }
+        },
+        "group": "general information"
+      },
+      "category": {
+        "type": "string",
+        "meta": {
+          "title": {
+            "en_US": "Category",
+            "en_GB": "Category",
+            "de_DE": "Category"
+          },
+          "information": {
+            "en_US": "This identifies the risk's category.",
+            "en_GB": "This identifies the risk's category.",
+            "de_DE": "This identifies the risk's category."
+          }
+        },
+        "group": "general information"
+      },
+      "class": {
+        "type": "string",
+        "meta": {
+          "title": {
+            "en_US": "Class",
+            "en_GB": "Class",
+            "de_DE": "Class"
+          },
+          "information": {
+            "en_US": "This identifies the risk's class.",
+            "en_GB": "This identifies the risk's class.",
+            "de_DE": "This identifies the risk's class."
+          }
+        },
+        "group": "general information"
+      },
       "tolerance level": {
         "type": "string",
         "enum": [
-            "Unassessed",
-            "Low",
-            "Medium",
-            "High",
-            "Extreme"
+          "Unassessed",
+          "Low",
+          "Medium",
+          "High",
+          "Extreme"
         ],
         "meta": {
           "title": {
@@ -632,9 +586,9 @@
             "de_DE": "Tolerance Level"
           },
           "information": {
-            "en_US": "The highest risk level that can be tolerated for this risk.",
-            "en_GB": "The highest risk level that can be tolerated for this risk.",
-            "de_DE": "The highest risk level that can be tolerated for this risk."
+            "en_US": "This is the highest risk level that can be tolerated for this risk.",
+            "en_GB": "This is the highest risk level that can be tolerated for this risk.",
+            "de_DE": "This is the highest risk level that can be tolerated for this risk."
           },
           "values": {
             "Unassessed": {
@@ -685,434 +639,6 @@
           }
         },
         "group": "general information"
-      },
-      "exposure factor (ef)": {
-        "type": "integer",
-        "meta": {
-          "title": {
-            "en_US": "Exposure Factor (EF)",
-            "en_GB": "Exposure Factor (EF)",
-            "de_DE": "Exposure Factor (EF)"
-          },
-          "information": {
-            "en_US": "The percentage by which the risk event will reduce the assets financial value.",
-            "en_GB": "The percentage by which the risk event will reduce the assets financial value.",
-            "de_DE": "The percentage by which the risk event will reduce the assets financial value."
-          }
-        },
-        "group": "general information"
-      },
-      "annualized rate of occurrence (aro)": {
-        "type": "string",
-        "enum": [
-          "Unassessed",
-          "Hyperdaily",
-          "Daily",
-          "Weekly",
-          "Monthly",
-          "Yearly",
-          "5 Yearly",
-          "10 Yearly",
-          "20 Yearly",
-          "> 20 Yearly"
-        ],
-        "meta": {
-          "title": {
-            "en_US": "Annualized Rate of Occurrence (ARO)",
-            "en_GB": "Annualized Rate of Occurrence (ARO)",
-            "de_DE": "Annualized Rate of Occurrence (ARO)"
-          },
-          "information": {
-            "en_US": "The number of times the risk event is likely occur in a particular year.",
-            "en_GB": "The number of times the risk event is likely occur in a particular year.",
-            "de_DE": "The number of times the risk event is likely occur in a particular year."
-          },
-          "values": {
-            "Unassessed": {
-              "title": {
-                "value": {
-                  "en_US": "Unassessed",
-                  "en_GB": "Unassessed",
-                  "de_DE": "Unassessed"
-                }
-              }
-            },
-            "Hyperdaily": {
-              "title": {
-                "value": {
-                  "en_US": "Hyperdaily",
-                  "en_GB": "Hyperdaily",
-                  "de_DE": "Hyperdaily"
-                }
-              }
-            },
-            "Daily": {
-              "title": {
-                "value": {
-                  "en_US": "Daily",
-                  "en_GB": "Daily",
-                  "de_DE": "Daily"
-                }
-              }
-            },
-            "Weekly": {
-              "title": {
-                "value": {
-                  "en_US": "Weekly",
-                  "en_GB": "Weekly",
-                  "de_DE": "Weekly"
-                }
-              }
-            },
-            "Monthly": {
-              "title": {
-                "value": {
-                  "en_US": "Monthly",
-                  "en_GB": "Monthly",
-                  "de_DE": "Monthly"
-                }
-              }
-            },
-            "Yearly": {
-              "title": {
-                "value": {
-                  "en_US": "Yearly",
-                  "en_GB": "Yearly",
-                  "de_DE": "Yearly"
-                }
-              }
-            },
-            "5 Yearly": {
-              "title": {
-                "value": {
-                  "en_US": "5 Yearly",
-                  "en_GB": "5 Yearly",
-                  "de_DE": "5 Yearly"
-                }
-              }
-            },
-            "10 Yearly": {
-              "title": {
-                "value": {
-                  "en_US": "10 Yearly",
-                  "en_GB": "10 Yearly",
-                  "de_DE": "10 Yearly"
-                }
-              }
-            },
-            "20 Yearly": {
-              "title": {
-                "value": {
-                  "en_US": "20 Yearly",
-                  "en_GB": "20 Yearly",
-                  "de_DE": "20 Yearly"
-                }
-              }
-            },
-            "> 20 Yearly": {
-              "title": {
-                "value": {
-                  "en_US": "> 20 Yearly",
-                  "en_GB": "> 20 Yearly",
-                  "de_DE": "> 20 Yearly"
-                }
-              }
-            }
-          }
-        },
-        "group": "general information"
-      },
-      "Type": {
-        "type": "string",
-        "enum": [
-          "Unclassified",
-          "Type 1",
-          "Type 2",
-          "Type 3",
-          "Type 4"
-        ],
-        "meta": {
-          "title": {
-            "en_US": "Type",
-            "en_GB": "Type",
-            "de_DE": "Type"
-          },
-          "information": {
-            "en_US": "The risk's type.",
-            "en_GB": "The risk's type.",
-            "de_DE": "The risk's type."
-          },
-          "values": {
-            "Unclassified": {
-              "title": {
-                "value": {
-                  "en_US": "Unclassified",
-                  "en_GB": "Unclassified",
-                  "de_DE": "Unclassified"
-                }
-              }
-            },
-            "Type 1": {
-              "title": {
-                "value": {
-                  "en_US": "Type 1",
-                  "en_GB": "Type 1",
-                  "de_DE": "Type 1"
-                }
-              }
-            },
-            "Type 2": {
-              "title": {
-                "value": {
-                  "en_US": "Type 2",
-                  "en_GB": "Type 2",
-                  "de_DE": "Type 2"
-                }
-              }
-            },
-            "Type 3": {
-              "title": {
-                "value": {
-                  "en_US": "Type 3",
-                  "en_GB": "Type 3",
-                  "de_DE": "Type 3"
-                }
-              }
-            },
-            "Type 4": {
-              "title": {
-                "value": {
-                  "en_US": "Type 4",
-                  "en_GB": "Type 4",
-                  "de_DE": "Type 4"
-                }
-              }
-            }
-          }
-        },
-        "group": "general information"
-      },
-      "category": {
-        "type": "string",
-        "enum": [
-          "Unclassified",
-          "Category 1",
-          "Category 2",
-          "Category 3",
-          "Category 4"
-        ],
-        "meta": {
-          "title": {
-            "en_US": "Category",
-            "en_GB": "Category",
-            "de_DE": "Category"
-          },
-          "information": {
-            "en_US": "The risk's category.",
-            "en_GB": "The risk's category.",
-            "de_DE": "The risk's category."
-          },
-          "values": {
-            "Unclassified": {
-              "title": {
-                "value": {
-                  "en_US": "Unclassified",
-                  "en_GB": "Unclassified",
-                  "de_DE": "Unclassified"
-                }
-              }
-            },
-            "Category 1": {
-              "title": {
-                "value": {
-                  "en_US": "Category 1",
-                  "en_GB": "Category 1",
-                  "de_DE": "Category 1"
-                }
-              }
-            },
-            "Category 2": {
-              "title": {
-                "value": {
-                  "en_US": "Category 2",
-                  "en_GB": "Category 2",
-                  "de_DE": "Category 2"
-                }
-              }
-            },
-            "Category 3": {
-              "title": {
-                "value": {
-                  "en_US": "Category 3",
-                  "en_GB": "Category 3",
-                  "de_DE": "Category 3"
-                }
-              }
-            },
-            "Category 4": {
-              "title": {
-                "value": {
-                  "en_US": "Category 4",
-                  "en_GB": "Category 4",
-                  "de_DE": "Category 4"
-                }
-              }
-            }
-          }
-        },
-        "group": "general information"
-      },
-      "Class": {
-        "type": "string",
-        "enum": [
-          "Unclassified",
-          "Class 1",
-          "Class 2",
-          "Class 3",
-          "Class 4"
-        ],
-        "meta": {
-          "title": {
-            "en_US": "Class",
-            "en_GB": "Class",
-            "de_DE": "Class"
-          },
-          "information": {
-            "en_US": "The risk's class.",
-            "en_GB": "The risk's class.",
-            "de_DE": "The risk's class."
-          },
-          "values": {
-            "Unclassified": {
-              "title": {
-                "value": {
-                  "en_US": "Unclassified",
-                  "en_GB": "Unclassified",
-                  "de_DE": "Unclassified"
-                }
-              }
-            },
-            "Class 1": {
-              "title": {
-                "value": {
-                  "en_US": "Class 1",
-                  "en_GB": "Class 1",
-                  "de_DE": "Class 1"
-                }
-              }
-            },
-            "Class 2": {
-              "title": {
-                "value": {
-                  "en_US": "Class 2",
-                  "en_GB": "Class 2",
-                  "de_DE": "Class 2"
-                }
-              }
-            },
-            "Class 3": {
-              "title": {
-                "value": {
-                  "en_US": "Class 3",
-                  "en_GB": "Class 3",
-                  "de_DE": "Class 3"
-                }
-              }
-            },
-            "Class 4": {
-              "title": {
-                "value": {
-                  "en_US": "Class 4",
-                  "en_GB": "Class 4",
-                  "de_DE": "Class 4"
-                }
-              }
-            }
-          }
-        },
-        "group": "general information"
-      },
-      "comments": {
-        "type": "string",
-        "meta": {
-          "title": {
-            "en_US": "Comments",
-            "en_GB": "Comments",
-            "de_DE": "Comments"
-          },
-          "information": {
-            "en_US": "Comments that are made about the risk.",
-            "en_GB": "Comments that are made about the risk.",
-            "de_DE": "Comments that are made about the risk."
-          }
-        },
-        "group": "meta data"
-      },
-      "date identified": {
-        "type": "string",
-        "format": "date",
-        "meta": {
-          "title": {
-            "en_US": "Date Identified",
-            "en_GB": "Date Identified",
-            "de_DE": "Date Identified"
-          },
-          "information": {
-            "en_US": "The date the risk was identified.",
-            "en_GB": "The date the risk was identified.",
-            "de_DE": "The date the risk was identified."
-          }
-        },
-        "group": "meta data"
-      },
-      "identified by": {
-        "type": "string",
-        "meta": {
-          "title": {
-            "en_US": "Identified By",
-            "en_GB": "Identified By",
-            "de_DE": "Identified By"
-          },
-          "information": {
-            "en_US": "The name of the identity that identified the risk.",
-            "en_GB": "The name of the identity that identified the risk.",
-            "de_DE": "The name of the identity that identified the risk."
-          }
-        },
-        "group": "meta data"
-      },
-      "date recorded": {
-        "type": "string",
-        "format": "date",
-        "meta": {
-          "title": {
-            "en_US": "Date Recorded",
-            "en_GB": "Date Recorded",
-            "de_DE": "Date Recorded"
-          },
-          "information": {
-            "en_US": "The date the risk was recorded.",
-            "en_GB": "The date the risk was recorded.",
-            "de_DE": "The date the risk was recorded."
-          }
-        },
-        "group": "meta data"
-      },
-      "recorded by": {
-        "type": "string",
-        "meta": {
-          "title": {
-            "en_US": "Recorded By",
-            "en_GB": "Recorded By",
-            "de_DE": "Recorded By"
-          },
-          "information": {
-            "en_US": "The name of the identity that recorded the risk.",
-            "en_GB": "The name of the identity that recorded the risk.",
-            "de_DE": "The name of the identity that recorded the risk."
-          }
-        },
-        "group": "meta data"
       }
     }
   }
